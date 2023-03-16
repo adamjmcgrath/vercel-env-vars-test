@@ -10,7 +10,10 @@ export async function middleware(req) {
     const loggedIn = Boolean(session);
     if (!loggedIn) {
       return NextResponse.redirect(
-        new URL(`/guest?baseurl=${process.env.AUTH0_BASE_URL}`, req.url)
+        new URL(
+          `/guest?baseurl=${process.env.AUTH0_BASE_URL}&vercelurl=${process.env.AUTH0_VERCEL_URL}`,
+          req.url
+        )
       );
     }
   }
