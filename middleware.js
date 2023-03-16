@@ -11,7 +11,7 @@ export async function middleware(req) {
     if (!loggedIn) {
       return NextResponse.redirect(
         new URL(
-          `/guest?baseurl=${process.env.AUTH0_BASE_URL}&vercelurl=${process.env.AUTH0_VERCEL_URL}`,
+          `/guest?baseurl=${process.env.AUTH0_BASE_URL}&vercelurl=${process.env.VERCEL_URL}`,
           req.url
         )
       );
