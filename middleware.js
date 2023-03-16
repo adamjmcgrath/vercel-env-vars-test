@@ -9,7 +9,9 @@ export async function middleware(req) {
     const session = await getSession(req, res);
     const loggedIn = Boolean(session);
     if (!loggedIn) {
-      return NextResponse.redirect(new URL("/guest", req.url));
+      return NextResponse.redirect(
+        new URL(`/guest?baseurl=${process.env.AUTH0_BASE_URL}`, req.url)
+      );
     }
   }
 }
