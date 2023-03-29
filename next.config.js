@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   env: {
-    AUTH0_BASE_URL: process.env.AUTH0_BASE_URL || `FOOBAR`,
+    AUTH0_BASE_URL: process.env.AUTH0_BASE_URL || `FOOBAZ`,
   },
 };
 
