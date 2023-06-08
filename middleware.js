@@ -1,11 +1,3 @@
-import { NextResponse } from "next/server";
-export async function middleware(req) {
-  return new NextResponse(`AUTH0_BASE_URL: ${process.env.AUTH0_BASE_URL}`, {
-    status: 200,
-    headers: { "content-type": "text/plain" },
-  });
-}
+import { withMiddlewareAuthRequired } from "@auth0/nextjs-auth0/edge";
 
-export const config = {
-  matcher: ["/"],
-};
+export default withMiddlewareAuthRequired();
